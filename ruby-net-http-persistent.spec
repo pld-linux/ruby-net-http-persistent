@@ -6,7 +6,7 @@
 Summary:	Persistent connections using Net::HTTP plus a speed fix
 Name:		ruby-%{gem_name}
 Version:	2.8
-Release:	1
+Release:	2
 License:	MIT
 Group:		Development/Languages
 Source0:	http://rubygems.org/gems/%{gem_name}-%{version}.gem
@@ -16,7 +16,6 @@ URL:		http://seattlerb.rubyforge.org/net-http-persistent
 BuildRequires:	rpm-rubyprov
 BuildRequires:	rpmbuild(macros) >= 1.656
 BuildRequires:	ruby-minitest
-Requires:	rubygems
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -24,12 +23,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Persistent connections using Net::HTTP plus a speed fix for 1.8. It's
 thread-safe too.
 
-%package	doc
+%package doc
 Summary:	Documentation for %{name}
 Group:		Documentation
 Requires:	%{name} = %{version}-%{release}
 
-%description    doc
+%description doc
 This package contains documentation for %{name}.
 
 %prep
@@ -52,6 +51,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc README.rdoc History.txt
+%dir %{ruby_vendorlibdir}/net/http
 %{ruby_vendorlibdir}/net/http/faster.rb
 %{ruby_vendorlibdir}/net/http/persistent.rb
 %{ruby_vendorlibdir}/net/http/persistent
