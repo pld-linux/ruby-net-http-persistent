@@ -4,13 +4,14 @@
 
 %define	pkgname	net-http-persistent
 Summary:	Persistent connections using Net::HTTP plus a speed fix
+Summary(pl.UTF-8):	Trwałe połączenia przy użyciu Net::HTTP z poprawą szybkości
 Name:		ruby-%{pkgname}
-Version:	2.8
-Release:	3
+Version:	2.9.4
+Release:	1
 License:	MIT
 Group:		Development/Languages
 Source0:	http://rubygems.org/gems/%{pkgname}-%{version}.gem
-# Source0-md5:	89e838075c21a437ed2b224b95e62245
+# Source0-md5:	61cb21cccc85ddca77ee58af25bcf51f
 Patch0:		rubygem-net-http-persistent-2.1-no-net-test.patch
 URL:		http://seattlerb.rubyforge.org/net-http-persistent
 BuildRequires:	rpm-rubyprov
@@ -20,16 +21,24 @@ BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Persistent connections using Net::HTTP plus a speed fix for 1.8. It's
-thread-safe too.
+Persistent connections using Net::HTTP plus a speed fix for Ruby 1.8.
+It's thread-safe too.
+
+%description -l pl.UTF-8
+Trwałe połączenia przy użyciu Net::HTTP z poprawą szybkości dla
+Ruby'ego 1.8. Moduł jest bezpieczny względem wątków.
 
 %package doc
-Summary:	Documentation for %{name}
+Summary:	Documentation for Net::HTTP::Persistent module
+Summary(pl.UTF-8):	Dokumentacja do modułu Net::HTTP::Persistent
 Group:		Documentation
 Requires:	%{name} = %{version}-%{release}
 
 %description doc
-This package contains documentation for %{name}.
+Documentation for Net::HTTP::Persistent module.
+
+%description doc -l pl.UTF-8
+Dokumentacja do modułu Net::HTTP::Persistent.
 
 %prep
 %setup -q -n %{pkgname}-%{version}
