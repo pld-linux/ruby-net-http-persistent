@@ -7,7 +7,7 @@ Summary:	Persistent connections using Net::HTTP plus a speed fix
 Summary(pl.UTF-8):	Trwałe połączenia przy użyciu Net::HTTP z poprawą szybkości
 Name:		ruby-%{pkgname}
 Version:	2.9.4
-Release:	2
+Release:	3
 License:	MIT
 Group:		Development/Languages
 Source0:	http://rubygems.org/gems/%{pkgname}-%{version}.gem
